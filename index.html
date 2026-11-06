@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Justin Patterson" />
+    <meta
+      name="description"
+      content="A studyguide that contains various software engineering concepts, tehcniques, logic, and practices"
+    />
+    <meta
+      name="keywords"
+      content="software engineering, study aids, learning materials, flashcards, studyguide, Se Study-Station"
+    />
+    <title>Study-er</title>
+    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a href="#" class="header__link">Flash Cards</a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li><a href="#home" class="nav__link">My Decks</a></li>
+          <li><a href="#home" class="nav__link">About</a></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page__main-content">
+      <section id="decks" class="decks">
+        <h2 class="decks__title">My Decks</h2>
+        <div class="wrapping-row">
+          <ul class="decks__list wrapping-row__display-contents"></ul>
+          <button
+            type="button"
+            class="decks__new-deck-btn"
+            aria-label="Add new card deck"
+          >
+            + New Deck
+          </button>
+        </div>
+      </section>
+      <section id="carousel" class="carousel">
+        <h2 class="carousel__title"></h2>
+
+        <div class="carousel__row">
+          <button
+            type="button"
+            class="carousel__btn carousel__btn_type_left"
+            aria-label="Previous card"
+          ></button>
+          <div class="carousel__card">
+            <p class="carousel__card-text"></p>
+          </div>
+          <button
+            type="button"
+            class="carousel__btn carousel__btn_type_right"
+            aria-label="Next card"
+          ></button>
+        </div>
+        <button
+          type="button"
+          class="carousel__btn carousel__btn_type_flip"
+          aria-label="Flip card"
+        ></button>
+      </section>
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__status-code">404 Not Found</h2>
+        <p class="not-found__text">
+          The page you requested could not be found. Sorry.
+        </p>
+        <a href="#home" class="not-found__link">Return to My Decks</a>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy;2026 Justin Patterson</p>
+    </footer>
+    <template id="card-template">
+      <li class="deck deck_color_green">
+        <h3 class="deck__title"></h3>
+
+        <div class="deck__row">
+          <p class="deck__count"></p>
+
+          <button
+            type="button"
+            class="deck__delete-btn"
+            aria-label="Delete Basic HTML Tags deck"
+          ></button>
+          <a class="deck__link" href="#"></a>
+        </div>
+      </li>
+    </template>
+
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>
