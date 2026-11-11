@@ -1,0 +1,32 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.gallery__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery__new-deck-btn {
+  display: flex;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 325px;
+  height: 205px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #1a1a1a80;
+  padding: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #ddd;
+}
+
+.gallery__new-deck-btn:hover {
+  background-color: #c5c5c5;
+  color: #1a1a1a;
+}

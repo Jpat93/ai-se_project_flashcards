@@ -3,17 +3,17 @@ import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 
 const cardTemplateEl = document.querySelector("#card-template");
-const cardContainerEl = document.querySelector(".decks__list");
+const cardContainerEl = document.querySelector(".gallery__list");
 const notFoundSection = document.querySelector("#not-found");
-const decksSelectionEl = document.querySelector("#decks");
+const decksSelectionEl = document.querySelector("#gallery");
 const carouselSectionEl = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
 
 function createDeckEl(item) {
-  const deckEl = cardTemplateEl.content.querySelector(".deck").cloneNode(true);
-  const deckTitleEl = deckEl.querySelector(".deck__title");
-  const deckCountEl = deckEl.querySelector(".deck__count");
-  const deleteButtonEl = deckEl.querySelector(".deck__delete-btn");
+  const deckEl = cardTemplateEl.content.querySelector(".card").cloneNode(true);
+  const deckTitleEl = deckEl.querySelector(".card__title");
+  const deckCountEl = deckEl.querySelector(".card__count");
+  const deleteButtonEl = deckEl.querySelector(".card__delete-btn");
 
   // for deck title - sets deck title with corresponding name
   deckTitleEl.textContent = item.name;
@@ -36,9 +36,9 @@ function createDeckEl(item) {
 
   // For deck color modifier
   const deckColorName = hexToString(item.color);
-  deckEl.classList.add(`deck_color_${deckColorName}`);
+  deckEl.classList.add(`card_color_${deckColorName}`);
 
-  const deckLinkEl = deckEl.querySelector(".deck__link");
+  const deckLinkEl = deckEl.querySelector(".card__link");
 
   deckLinkEl.href = `#carousel/${item.id}`;
   deckLinkEl.setAttribute("aria-label", `Study ${item.name}`);
