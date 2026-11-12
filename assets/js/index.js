@@ -5,7 +5,7 @@ import { renderCarouselView } from "./carousel.js";
 const cardTemplateEl = document.querySelector("#card-template");
 const cardContainerEl = document.querySelector(".gallery__list");
 const notFoundSection = document.querySelector("#not-found");
-const decksSelectionEl = document.querySelector("#gallery");
+const decksSelectionEl = document.querySelector("#home");
 const carouselSectionEl = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
 

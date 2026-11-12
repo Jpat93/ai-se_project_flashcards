@@ -10,7 +10,15 @@
   padding: 0;
 }
 
-.gallery__new-deck-btn {
+.gallery__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.gallery__new-deck-btn,
+.gallery__new-card-btn {
   display: flex;
   border-radius: 20px;
   width: 100%;
@@ -26,7 +34,26 @@
   background-color: #ddd;
 }
 
-.gallery__new-deck-btn:hover {
+.gallery__new-deck-btn:hover,
+.gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
+}
+
+.gallery__deck-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gallery__practice-btn {
+  border: none;
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  gap: 10px;
+  opacity: 1;
 }

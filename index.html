@@ -37,7 +37,7 @@
     </header>
 
     <main class="page__main-content">
-      <section id="gallery" class="gallery">
+      <section id="home" class="gallery">
         <h2 class="gallery__title">My Decks</h2>
         <div class="wrapping-row">
           <ul class="gallery__list wrapping-row__display-contents"></ul>
@@ -47,6 +47,24 @@
             aria-label="Add new card deck"
           >
             + New Deck
+          </button>
+        </div>
+      </section>
+      <section id="deck-view" class="gallery">
+        <div class="gallery__deck-wrap">
+          <h2 class="gallery__title"></h2>
+          <button type="button" class="gallery__practice-btn">
+            <img src="./assets/images/Button.png" alt="The practice button" />
+          </button>
+        </div>
+        <div class="wrapping-row">
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
+          <button
+            type="button"
+            class="gallery__new-deck-btn"
+            aria-label="Add new card deck"
+          >
+            + New Card
           </button>
         </div>
       </section>
@@ -98,6 +116,24 @@
             aria-label="Delete Basic HTML Tags deck"
           ></button>
           <a class="card__link" href="#"></a>
+        </div>
+      </li>
+    </template>
+
+    <template id="flashcard-template">
+      <li class="card">
+        <h3 class="card__title"></h3>
+        <div class="card__row">
+          <button
+            type="button"
+            aria-label="Flip card"
+            class="card__flip"
+          ></button>
+          <button
+            type="button"
+            aria-label="Delete card"
+            class="card__delete-btn"
+          ></button>
         </div>
       </li>
     </template>
