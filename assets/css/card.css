@@ -66,6 +66,23 @@
   opacity: 100%;
 }
 
+.card__flip {
+  border: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  opacity: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/flip.svg);
+  position: relative;
+  z-index: 2;
+}
+
+.card__flip:hover {
+  opacity: 100%;
+}
+
 .card_color_green {
   background-color: #64d583;
 }
@@ -88,4 +105,8 @@
 
 .card_color_yellow {
   background-color: #f5d770;
+}
+
+.card_color_white {
+  background-color: #fff;
 }

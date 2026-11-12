@@ -1,11 +1,13 @@
 import { decks, getDeckByID } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
+import { renderDeckView } from "./deck-view.js";
 
 const cardTemplateEl = document.querySelector("#card-template");
-const cardContainerEl = document.querySelector(".gallery__list");
 const notFoundSection = document.querySelector("#not-found");
 const decksSelectionEl = document.querySelector("#home");
+const cardContainerEl = decksSelectionEl.querySelector(".gallery__list");
+const deckViewSectionEl = document.querySelector("#deck-view");
 const carouselSectionEl = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
 
@@ -40,8 +42,8 @@ function createDeckEl(item) {
 
   const deckLinkEl = deckEl.querySelector(".card__link");
 
-  deckLinkEl.href = `#carousel/${item.id}`;
-  deckLinkEl.setAttribute("aria-label", `Study ${item.name}`);
+  deckLinkEl.href = `#deck/${item.id}`;
+  deckLinkEl.setAttribute("aria-label", `View ${item.name} deck`);
 
   return deckEl;
 }
@@ -55,6 +57,7 @@ function router() {
   const hash = window.location.hash.slice(1);
 
   decksSelectionEl.style.display = "none";
+  deckViewSectionEl.style.display = "none";
   notFoundSection.style.display = "none";
   carouselSectionEl.style.display = "none";
 
@@ -62,6 +65,15 @@ function router() {
 
   if (hash === "" || hash === "home") {
     decksSelectionEl.style.display = "flex";
+  } else if (hash.startsWith("deck/")) {
+    const deckID = hash.slice("deck/".length);
+    const deck = getDeckByID(deckID);
+
+    if (deck) {
+      renderDeckView(deck);
+    } else {
+      notFoundSection.style.display = "block";
+    }
   } else if (hash.startsWith("carousel/")) {
     const deckID = hash.slice("carousel/".length);
     const deck = getDeckByID(deckID);
